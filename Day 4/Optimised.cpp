@@ -1,23 +1,17 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 void rotateArr(vector<int>& arr, int d)
 {
-    vector<int> store;
+    int size = arr.size();
 
-    for (int i = d; i < arr.size(); i++)
+    for (int i = 0; i < size; i++)
     {
-        store.push_back(arr[i]);
+        // continued...
     }
-
-    for (int i = 0; i < d; i++)
-    {
-        store.push_back(arr[i]);
-    }
-
-    arr = store;
 }
 
 int main()
@@ -50,8 +44,3 @@ int main()
 
     return 0;
 }
-
-/*
-Time Complexity: O(n)
-Space Complexity: O(n)
-*/
