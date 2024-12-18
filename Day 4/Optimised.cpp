@@ -1,3 +1,5 @@
+// Jugggling Algorithm
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -6,11 +8,33 @@ using namespace std;
 
 void rotateArr(vector<int>& arr, int d)
 {
-    int size = arr.size();
-
-    for (int i = 0; i < size; i++)
+    int n = arr.size();
+        
+    d %= n;
+    
+    int cycles = __gcd(n, d);
+    
+    for (int i = 0; i < cycles; i++)
     {
-        // continued...
+        int startElement = arr[i];
+        
+        int currentIndex = i, nextIndex;
+        
+        while (true)
+        {
+            nextIndex = (currentIndex + d) % n;
+            
+            if (nextIndex == i)
+            {
+                break;
+            }
+            
+            arr[currentIndex] = arr[nextIndex];
+            
+            currentIndex = nextIndex;
+        }
+        
+        arr[currentIndex] = startElement;
     }
 }
 
@@ -44,3 +68,8 @@ int main()
 
     return 0;
 }
+
+/*
+Time Complexity: O(n)
+Space Complexity: O(1) 
+*/
