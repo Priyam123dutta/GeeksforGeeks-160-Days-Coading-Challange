@@ -7,8 +7,8 @@ using namespace std;
 int getSecondLargest(vector<int> &arr) 
 {
     sort(arr.begin(), arr.end());
-    
-    return arr[arr.size() - 2];
+
+    return (arr[arr.size() - 2] == arr[arr.size() - 1]) ?-1 : arr[arr.size() - 2];
 }
 
 int main()
