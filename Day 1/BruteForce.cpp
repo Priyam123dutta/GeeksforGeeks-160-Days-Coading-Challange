@@ -8,7 +8,13 @@ int getSecondLargest(vector<int> &arr)
 {
     sort(arr.begin(), arr.end());
 
-    return (arr[arr.size() - 2] == arr[arr.size() - 1]) ?-1 : arr[arr.size() - 2];
+    for (int i = arr.size() - 2; i >= 0; i--)
+    {
+        if (arr[i] < arr[i + 1])
+        {
+            return arr[i];
+        }
+    }
 }
 
 int main()
